@@ -36,10 +36,12 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun ListItemDemo(modifier: Modifier = Modifier) {
-    Box(modifier = modifier
-        .padding(16.dp)
-        .background(Color.White)
-        .height(100.dp)) {
+    Box(
+        modifier = modifier
+            .padding(16.dp)
+            .background(Color.White)
+            .height(100.dp)
+    ) {
         Card(
             shape = RoundedCornerShape(15.dp),
             elevation = 5.dp,
@@ -55,7 +57,9 @@ fun ListItemDemo(modifier: Modifier = Modifier) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_mercedes_benz_logo),
                     contentDescription = null,
-                    modifier.scale(0.35f, 0.35f).absoluteOffset((-20).dp,0.dp),
+                    modifier
+                        .scale(0.35f, 0.35f)
+                        .absoluteOffset((-20).dp, 0.dp),
                     Color.Gray
                 )
                 Column {
