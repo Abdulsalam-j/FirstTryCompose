@@ -41,11 +41,13 @@ fun ListItemDemo(modifier: Modifier = Modifier) {
             .padding(16.dp)
             .background(Color.White)
             .height(100.dp)
+            .fillMaxSize()
     ) {
         Card(
             shape = RoundedCornerShape(15.dp),
             elevation = 5.dp,
-            backgroundColor = Color.LightGray
+            backgroundColor = Color.LightGray,
+            modifier = modifier.fillMaxSize()
         ) {
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(8.dp)) {
                 Text(
@@ -62,15 +64,14 @@ fun ListItemDemo(modifier: Modifier = Modifier) {
                         .absoluteOffset((-20).dp, 0.dp),
                     Color.Gray
                 )
-                Column {
-                    modifier.padding(16.dp)
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = "5 of 5 Author Rating",
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Light,
                         color = Color.DarkGray
                     )
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row {
                         for (i in 1..5) {
                             Icon(
                                 Icons.Rounded.FavoriteBorder,
