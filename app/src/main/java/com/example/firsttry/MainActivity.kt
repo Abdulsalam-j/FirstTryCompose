@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -41,15 +42,15 @@ fun ListItemDemo(modifier: Modifier = Modifier) {
             .padding(16.dp)
             .background(Color.White)
             .height(100.dp)
-            .fillMaxSize()
+            .fillMaxWidth()
     ) {
         Card(
             shape = RoundedCornerShape(15.dp),
             elevation = 5.dp,
             backgroundColor = Color.LightGray,
-            modifier = modifier.fillMaxSize()
+            modifier = modifier.fillMaxWidth()
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(8.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier.padding(8.dp)) {
                 Text(
                     fontWeight = FontWeight.Light,
                     color = Color.DarkGray,
@@ -64,12 +65,13 @@ fun ListItemDemo(modifier: Modifier = Modifier) {
                         .absoluteOffset((-20).dp, 0.dp),
                     Color.Gray
                 )
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(horizontalAlignment = Alignment.End, modifier = modifier.fillMaxWidth()) {
                     Text(
                         text = "5 of 5 Author Rating",
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Light,
-                        color = Color.DarkGray
+                        color = Color.DarkGray,
+                        modifier = modifier.offset((-9).dp,0.dp)
                     )
                     Row {
                         for (i in 1..5) {
